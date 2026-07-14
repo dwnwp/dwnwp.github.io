@@ -14,8 +14,8 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://dwnwp.github.io">
 
-    <!-- Favicon (emoji-style) -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./assets/images/profile.jpg">
 
     <!-- Google Fonts — Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -79,7 +79,7 @@
             <div class="grid md:grid-cols-3 gap-10 md:gap-14 items-center mb-16">
                 <!-- Profile Avatar -->
                 <div class="flex justify-center md:justify-start">
-                    <img src="./assets/images/profile-emoji.svg" alt="Nawapol Singlor — Profile" class="w-40 h-40 md:w-48 md:h-48 rounded-2xl border border-slate-200 shadow-sm" width="192" height="192">
+                    <img src="./assets/images/profile.jpg" alt="Profile" class="w-56 h-56 md:w-64 md:h-64 rounded-full border border-slate-200 shadow-sm object-cover" width="256" height="256">
                 </div>
 
                 <!-- Name + Tagline + CTAs -->
@@ -371,8 +371,8 @@
                             <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-slate-100 text-xs text-slate-700 font-medium border border-slate-200">Ollama</span>
                             <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-slate-100 text-xs text-slate-700 font-medium border border-slate-200">Qdrant</span>
                             <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-slate-100 text-xs text-slate-700 font-medium border border-slate-200">MinIO</span>
-                            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-slate-100 text-xs text-slate-700 font-medium border border-slate-200"><i class="devicon-redis-plain colored text-sm"></i> Redis</span>
-                            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-slate-100 text-xs text-slate-700 font-medium border border-slate-200">RabbitMQ</span>
+                            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-slate-100 text-xs text-slate-700 font-medium border border-slate-200"><i class="devicon-redis-plain colored text-sm"></i>Redis</span>
+                            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-slate-100 text-xs text-slate-700 font-medium border border-slate-200"><i class="devicon-rabbitmq-original colored"></i>RabbitMQ</span>
                         </div>
                         <p class="text-slate-600 leading-relaxed flex-1">
                             Multi-Agent Chatbot for providing information and answering questions related to the Computer Department at Silpakorn University. Available on LINE and Facebook Messenger, supporting both text and image replies. Includes a website to manage the chatbot's knowledge base, allowing admin to upload, delete, or edit documents and images in real-time.
@@ -382,7 +382,7 @@
                                 <span>View Project Details</span>
                                 <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                             </div>
-                            <a href="#" onclick="event.stopPropagation();" class="inline-flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-slate-700 bg-white hover:bg-slate-50 hover:text-cyan-700 rounded-lg transition-colors border border-slate-200 shadow-sm">
+                            <a href="https://github.com/dwnwp/cpsu-chatbot-project" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();" class="inline-flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-slate-700 bg-white hover:bg-slate-50 hover:text-cyan-700 rounded-lg transition-colors border border-slate-200 shadow-sm">
                                 <i class="devicon-github-original text-lg text-slate-900"></i> Source Code
                             </a>
                         </div>
@@ -410,7 +410,7 @@
                                 <span>View Project Details</span>
                                 <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                             </div>
-                            <a href="#" onclick="event.stopPropagation();" class="inline-flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-slate-700 bg-white hover:bg-slate-50 hover:text-cyan-700 rounded-lg transition-colors border border-slate-200 shadow-sm">
+                            <a href="https://github.com/dwnwp/flutter-movie-app" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();" class="inline-flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-slate-700 bg-white hover:bg-slate-50 hover:text-cyan-700 rounded-lg transition-colors border border-slate-200 shadow-sm">
                                 <i class="devicon-github-original text-lg text-slate-900"></i> Source Code
                             </a>
                         </div>
@@ -420,7 +420,7 @@
                 <!-- Project 3: File Transfer System -->
                 <div class="card group cursor-pointer hover:-translate-y-1 hover:shadow-md transition-all duration-300 flex flex-col md:flex-row h-full gap-6" onclick="location.href='./projects/file-transfer/'">
                     <div class="w-full md:w-2/5 shrink-0 h-48 md:h-auto min-h-[220px] bg-slate-100 rounded-lg overflow-hidden border border-slate-200 flex items-center justify-center relative">
-                        <img src="./assets/images/file_transfer/client_upload.jpg" alt="CPSU Multi-Agent Chatbot" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <img src="./assets/images/file_transfer/client_upload.jpg" alt="Java File Transfer System" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="flex-1 flex flex-col py-2">
                         <div class="flex items-start justify-between w-full mb-3">
@@ -438,7 +438,7 @@
                                 <span>View Project Details</span>
                                 <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                             </div>
-                            <a href="#" onclick="event.stopPropagation();" class="inline-flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-slate-700 bg-white hover:bg-slate-50 hover:text-cyan-700 rounded-lg transition-colors border border-slate-200 shadow-sm">
+                            <a href="https://github.com/dwnwp/java-filetransfer" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();" class="inline-flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-slate-700 bg-white hover:bg-slate-50 hover:text-cyan-700 rounded-lg transition-colors border border-slate-200 shadow-sm">
                                 <i class="devicon-github-original text-lg text-slate-900"></i> Source Code
                             </a>
                         </div>
@@ -448,7 +448,7 @@
                 <!-- Project 4: Instant Noodle E-commerce -->
                 <div class="card group cursor-pointer hover:-translate-y-1 hover:shadow-md transition-all duration-300 flex flex-col md:flex-row h-full gap-6" onclick="location.href='./projects/instant-noodle-ecommerce/'">
                     <div class="w-full md:w-2/5 shrink-0 h-48 md:h-auto min-h-[220px] bg-slate-100 rounded-lg overflow-hidden border border-slate-200 flex items-center justify-center relative">
-                        <img src="./assets/images/noodles_ecommerce/menu.jpg" alt="CPSU Multi-Agent Chatbot" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <img src="./assets/images/noodles_ecommerce/menu.jpg" alt="Instant Noodle E-commerce" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="flex-1 flex flex-col py-2">
                         <div class="flex items-start justify-between w-full mb-3">
@@ -470,7 +470,7 @@
                                 <span>View Project Details</span>
                                 <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                             </div>
-                            <a href="#" onclick="event.stopPropagation();" class="inline-flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-slate-700 bg-white hover:bg-slate-50 hover:text-cyan-700 rounded-lg transition-colors border border-slate-200 shadow-sm">
+                            <a href="https://github.com/dwnwp/mamashop" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();" class="inline-flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-slate-700 bg-white hover:bg-slate-50 hover:text-cyan-700 rounded-lg transition-colors border border-slate-200 shadow-sm">
                                 <i class="devicon-github-original text-lg text-slate-900"></i> Source Code
                             </a>
                         </div>
@@ -567,7 +567,7 @@
                 © 2026 Nawapol Singlor. <span>All rights reserved.</span>
             </p>
             <p class="text-xs text-gray-400">
-                <span>Nawapol — Portfolio 2026</span>
+                <span>Nawapol — Portfolio</span>
             </p>
         </div>
     </footer>

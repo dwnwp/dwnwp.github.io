@@ -9,32 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ========================================
-   Copy Email to Clipboard
-   ======================================== */
-function copyEmail() {
-  const email = 'nawapol.singlor@gmail.com';
-  navigator.clipboard.writeText(email).then(() => {
-    const label  = document.getElementById('copy-label');
-    const copyIc = document.getElementById('copy-icon');
-    const checkIc = document.getElementById('check-icon');
-
-    label.textContent  = 'Copied!';
-    label.classList.add('text-emerald-500');
-    label.classList.remove('text-gray-400', 'group-hover:text-cyan-500');
-    copyIc.classList.add('hidden');
-    checkIc.classList.remove('hidden');
-
-    setTimeout(() => {
-      label.textContent = 'Click to copy';
-      label.classList.remove('text-emerald-500');
-      label.classList.add('text-gray-400', 'group-hover:text-cyan-500');
-      copyIc.classList.remove('hidden');
-      checkIc.classList.add('hidden');
-    }, 2000);
-  });
-}
-
-/* ========================================
    Mobile Menu Toggle
    ======================================== */
 function initMobileMenu() {
@@ -187,3 +161,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+/* ========================================
+   Copy Email Function
+   ======================================== */
+function copyEmail() {
+  const emailText = document.getElementById('copy-email-text').innerText;
+  navigator.clipboard.writeText(emailText).then(() => {
+    const copyIcon = document.getElementById('copy-icon');
+    const checkIcon = document.getElementById('check-icon');
+    const copyLabel = document.getElementById('copy-label');
+    
+    copyIcon.classList.add('hidden');
+    checkIcon.classList.remove('hidden');
+    copyLabel.innerText = 'Copied!';
+    
+    setTimeout(() => {
+      copyIcon.classList.remove('hidden');
+      checkIcon.classList.add('hidden');
+      copyLabel.innerText = 'Click to copy';
+    }, 2000);
+  });
+}
