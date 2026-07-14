@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPSU Multi-Agent Chatbot — Nawapol Singlor</title>
+    <meta name="description" content="Multi-Agent Chatbot for Computer Department by Nawapol Singlor.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Devicon -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <!-- Tailwind CSS -->
+    <link href="../../src/output.css" rel="stylesheet">
+</head>
+<body class="bg-white text-slate-900 font-sans antialiased overflow-x-hidden selection:bg-cyan-200 selection:text-cyan-900">
+
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-100/90 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="../../index.html#projects" class="text-slate-500 font-bold text-sm tracking-tight hover:text-cyan-700 flex items-center gap-2 transition-colors duration-300">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg> Back to Portfolio
+            </a>
+            <a href="../../index.html" class="text-slate-900 font-bold text-lg tracking-tight hover:text-cyan-700 transition-colors duration-300">
+                &lt;NP /&gt;
+            </a>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-6 pt-28 pb-20">
+        <h1 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4">CPSU Multi-Agent Chatbot</h1>
+        <div class="flex flex-wrap gap-2 mb-8">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-slate-100 text-xs text-slate-700 font-medium border border-slate-200"><i class="devicon-go-original-wordmark colored text-base"></i> Golang</span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-slate-100 text-xs text-slate-700 font-medium border border-slate-200"><i class="devicon-python-plain colored text-base"></i> Python</span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-slate-100 text-xs text-slate-700 font-medium border border-slate-200"><i class="devicon-vuejs-plain colored text-base"></i> Vue 3</span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-slate-100 text-xs text-slate-700 font-medium border border-slate-200">Ollama</span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-slate-100 text-xs text-slate-700 font-medium border border-slate-200">Qdrant</span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-slate-100 text-xs text-slate-700 font-medium border border-slate-200">MinIO</span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-slate-100 text-xs text-slate-700 font-medium border border-slate-200"><i class="devicon-redis-plain colored text-base"></i> Redis</span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-slate-100 text-xs text-slate-700 font-medium border border-slate-200">RabbitMQ</span>
+        </div>
+
+        <div class="space-y-12">
+            <!-- Project Description -->
+            <div>
+                <p class="text-slate-600 leading-relaxed">
+                    Multi-Agent Chatbot for providing information and answering questions related to the Computer Department at Silpakorn University. Available on LINE and Facebook Messenger, supporting both text and image replies. Includes a website to manage the chatbot's knowledge base, allowing admin to upload, delete, or edit documents and images in real-time.
+                </p>
+                <div class="mt-4 p-4 bg-cyan-50 border border-cyan-100 rounded-lg text-sm text-cyan-800 font-medium">
+                    Powered by Local LLM: typhoon2.1-gemma3-12b, Embedding model: BGE-M3 via Ollama.
+                </div>
+            </div>
+
+            <!-- Multi-Agent Workflow Section -->
+            <div>
+                <h2 class="text-lg font-bold text-slate-800 border-l-4 border-cyan-500 pl-3 mb-6">Multi-Agent System Architecture</h2>
+                <div class="rounded-xl overflow-hidden border border-slate-200 mb-6 bg-slate-50 p-4">
+                    <img src="../../assets/images/cpsu_chatbot/Multi_Agent_Workflow.jpg" alt="Multi-Agent System Workflow" class="w-full max-h-[500px] object-contain mx-auto cursor-zoom-in" onclick="openLightbox(this.src)">
+                </div>
+                <ul class="list-disc list-inside text-slate-600 space-y-3 leading-relaxed">
+                    <li>RAG Queries: The Main Agent invokes tools to pull data from Qdrant as a knowledge base, then forwards it to the Summarize Agent to analyze and generate replies.</li>
+                    <li>General & Image Replies: For general messages or queries requiring image response, the Main Agent directly utilizes the send_image_tool to reply with images.</li>
+                </ul>
+            </div>
+
+            <!-- Chatbot Features -->
+            <div>
+                <h2 class="text-lg font-bold text-slate-800 border-l-4 border-cyan-500 pl-3 mb-6">Chatbot Features & Usage Examples</h2>
+                <div class="grid grid-cols-1 gap-8">
+                    <!-- FAQ -->
+                    <div class="border border-slate-100 rounded-xl p-5 bg-slate-50 flex flex-col justify-between">
+                        <div>
+                            <h5 class="font-bold text-slate-900 mb-2">General FAQ</h5>
+                        </div>
+                        <div class="grid grid-cols-1 gap-4 mt-4">
+                            <img src="../../assets/images/cpsu_chatbot/chat_faq.jpg" alt="FAQ Chat" class="rounded border border-slate-200 w-full max-h-[500px] object-contain cursor-zoom-in bg-white" onclick="openLightbox(this.src)">
+                            <p class="text-sm text-slate-600 leading-relaxed mb-4">Answers generic questions (grades, registration, tuition). If a user asks about tuition, the bot analyzes and asks follow-up questions (e.g. study plan, degree level) to ensure the answer matches perfectly.</p>
+                            <img src="../../assets/images/cpsu_chatbot/chat_faq_follow_up.jpg" alt="FAQ Follow up" class="rounded border border-slate-200 w-full max-h-[500px] object-contain cursor-zoom-in bg-white" onclick="openLightbox(this.src)">
+                        </div>
+                    </div>
+
+                    <!-- Image Replies -->
+                    <div class="border border-slate-100 rounded-xl p-5 bg-slate-50 flex flex-col justify-between">
+                        <div>
+                            <h5 class="font-bold text-slate-900 mb-2">Image Replies</h5>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-4">Responds with maps, academic calendars, or study plan documents dynamically based on request context.</p>
+                        </div>
+                        <div class="mt-4">
+                            <img src="../../assets/images/cpsu_chatbot/chat_image_reply.jpg" alt="Image Reply Chat" class="rounded border border-slate-200 w-full max-h-[500px] object-contain cursor-zoom-in mx-auto bg-white" onclick="openLightbox(this.src)">
+                        </div>
+                    </div>
+
+                    <!-- Guardrails -->
+                    <div class="border border-slate-100 rounded-xl p-5 bg-slate-50 flex flex-col justify-between">
+                        <div>
+                            <h5 class="font-bold text-slate-900 mb-2">LLM Guardrails</h5>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-4">Filters and blocks prompts outside scope of academic services to keep chatbot professional and secure.</p>
+                        </div>
+                        <div class="mt-4">
+                            <img src="../../assets/images/cpsu_chatbot/chat_guardrail.jpg" alt="Guardrails Chat" class="rounded border border-slate-200 w-full max-h-[500px] object-contain cursor-zoom-in mx-auto bg-white" onclick="openLightbox(this.src)">
+                        </div>
+                    </div>
+
+                    <!-- Multi-Turn -->
+                    <div class="border border-slate-100 rounded-xl p-5 bg-slate-50 flex flex-col justify-between">
+                        <div>
+                            <h5 class="font-bold text-slate-900 mb-2">Session Lock & Multi-Turn Messaging</h5>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-4">Uses Session Lock + Message Queue. Consecutive messages are queued in Redis first, then read as a batch once AI finishes processing, providing complete context comprehension and saving resources.</p>
+                        </div>
+                        <div class="mt-4">
+                            <img src="../../assets/images/cpsu_chatbot/chat_multi_turn.jpg" alt="Multi turn chat" class="rounded border border-slate-200 w-full max-h-[500px] object-contain cursor-zoom-in mx-auto bg-white" onclick="openLightbox(this.src)">
+                        </div>
+                    </div>
+
+                    <!-- Rate Limit -->
+                    <div class="border border-slate-100 rounded-xl p-5 bg-slate-50 flex flex-col justify-between">
+                        <div>
+                            <h5 class="font-bold text-slate-900 mb-2">Rate Limiting</h5>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-4">Limits users to 5 messages per minute to prevent resource exhaustion and server abuse.</p>
+                        </div>
+                        <div class="mt-4">
+                            <img src="../../assets/images/cpsu_chatbot/chat_rate_limit.jpg" alt="Rate limit chat" class="rounded border border-slate-200 w-full max-h-[500px] object-contain cursor-zoom-in mx-auto bg-white" onclick="openLightbox(this.src)">
+                        </div>
+                    </div>
+
+                    <!-- Stateful -->
+                    <div class="border border-slate-100 rounded-xl p-5 bg-slate-50 flex flex-col justify-between">
+                        <div>
+                            <h5 class="font-bold text-slate-900 mb-2">Stateful Conversations</h5>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-4">Saves short-term conversation state so users can easily reference previous statements without re-entering parameters.</p>
+                        </div>
+                        <div class="mt-4">
+                            <img src="../../assets/images/cpsu_chatbot/chat_stateful.jpg" alt="Stateful Chat" class="rounded border border-slate-200 w-full max-h-[500px] object-contain cursor-zoom-in mx-auto bg-white" onclick="openLightbox(this.src)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Knowledge Base Management Section -->
+            <div>
+                <h2 class="text-lg font-bold text-slate-800 border-l-4 border-cyan-500 pl-3 mb-6">Knowledge Base Management Dashboard</h2>
+                <div class="grid grid-cols-1 gap-8">
+                    <!-- Login -->
+                    <div class="border border-slate-100 rounded-xl p-5 bg-slate-50">
+                        <h5 class="font-bold text-slate-800 mb-2">JWT Authentication</h5>
+                        <p class="text-sm text-slate-500 mb-4">Secure login using JSON Web Tokens.</p>
+                        <img src="../../assets/images/cpsu_chatbot/manage_login.jpg" alt="Admin login" class="rounded border border-slate-200 w-full max-h-[500px] object-contain cursor-zoom-in bg-white" onclick="openLightbox(this.src)">
+                    </div>
+                    <!-- Doc manage -->
+                    <div class="border border-slate-100 rounded-xl p-5 bg-slate-50">
+                        <h5 class="font-bold text-slate-800 mb-2">Document Management</h5>
+                        <p class="text-sm text-slate-500 mb-4">Allows search, edit and delete operations.</p>
+                        <div class="space-y-4">
+                            <img src="../../assets/images/cpsu_chatbot/manage_docs.jpg" alt="Doc dashboard" class="rounded border border-slate-200 w-full max-h-[500px] object-contain cursor-zoom-in bg-white" onclick="openLightbox(this.src)">
+                            <img src="../../assets/images/cpsu_chatbot/manage_edit_doc.jpg" alt="Edit doc panel" class="rounded border border-slate-200 w-full max-h-[500px] object-contain cursor-zoom-in bg-white" onclick="openLightbox(this.src)">
+                        </div>
+                    </div>
+                    <!-- Upload doc -->
+                    <div class="border border-slate-100 rounded-xl p-5 bg-slate-50">
+                        <h5 class="font-bold text-slate-800 mb-2">Real-time Upload</h5>
+                        <p class="text-sm text-slate-500 mb-4">Adds PDFs, txt directly to chatbot knowledge base.</p>
+                        <img src="../../assets/images/cpsu_chatbot/manage_upload.jpg" alt="Upload panel" class="rounded border border-slate-200 w-full max-h-[500px] object-contain cursor-zoom-in bg-white" onclick="openLightbox(this.src)">
+                    </div>
+                    <!-- Image manage -->
+                    <div class="border border-slate-100 rounded-xl p-5 bg-slate-50">
+                        <h5 class="font-bold text-slate-800 mb-2">Image Library Management</h5>
+                        <p class="text-sm text-slate-500 mb-4">Manage inline reply images such as study schedules and campuses map.</p>
+                        <img src="../../assets/images/cpsu_chatbot/manage_image.jpg" alt="Image dashboard" class="rounded border border-slate-200 w-full max-h-[500px] object-contain cursor-zoom-in bg-white" onclick="openLightbox(this.src)">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox-modal" class="fixed inset-0 z-[100] hidden flex-col items-center justify-center bg-slate-950/90 backdrop-blur-sm transition-all duration-300">
+        <!-- Toolbar -->
+        <div class="absolute top-4 right-4 flex items-center gap-4 z-10 text-white">
+            <button onclick="zoomLightbox(0.2)" class="p-2 hover:bg-white/20 rounded-full transition-colors" aria-label="Zoom In">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+            </button>
+            <button onclick="zoomLightbox(-0.2)" class="p-2 hover:bg-white/20 rounded-full transition-colors" aria-label="Zoom Out">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM13 10H7"/></svg>
+            </button>
+            <button onclick="closeLightbox()" class="p-2 hover:bg-white/20 rounded-full transition-colors" aria-label="Close">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+        </div>
+        <!-- Image Container -->
+        <div id="lightbox-container" class="relative w-full h-full flex items-center justify-center overflow-auto p-4 cursor-grab active:cursor-grabbing">
+            <img id="lightbox-img" src="" alt="Expanded Image" class="max-w-none transition-transform duration-200" style="transform: scale(1); max-height: 90vh; object-fit: contain;">
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="../../src/main.js"></script>
+</body>
+</html>

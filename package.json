@@ -1,4 +1,11 @@
 {
+  "name": "dwnwp-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio Website",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch",
+    "build": "npx tailwindcss -i ./src/input.css -o ./src/output.css --minify"
+  },
   "devDependencies": {
     "tailwindcss": "^3.4.19"
   }

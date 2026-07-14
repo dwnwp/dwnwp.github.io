@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flix Sphere Application — Nawapol Singlor</title>
+    <meta name="description" content="Flix Sphere Mobile Application project by Nawapol Singlor.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Devicon -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <!-- Tailwind CSS -->
+    <link href="../../src/output.css" rel="stylesheet">
+</head>
+<body class="bg-white text-slate-900 font-sans antialiased overflow-x-hidden selection:bg-cyan-200 selection:text-cyan-900">
+
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-100/90 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="../../index.html#projects" class="text-slate-500 font-bold text-sm tracking-tight hover:text-cyan-700 flex items-center gap-2 transition-colors duration-300">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg> Back to Portfolio
+            </a>
+            <a href="../../index.html" class="text-slate-900 font-bold text-lg tracking-tight hover:text-cyan-700 transition-colors duration-300">
+                &lt;NP /&gt;
+            </a>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-6 pt-28 pb-20">
+        <h1 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4">Flix Sphere Application</h1>
+        <div class="flex flex-wrap gap-2 mb-8">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-slate-100 text-xs text-slate-700 font-medium border border-slate-200"><i class="devicon-flutter-plain colored text-base"></i> Flutter</span>
+        </div>
+
+        <div class="space-y-12">
+            <!-- Project Description -->
+            <div>
+                <p class="text-slate-600 leading-relaxed text-lg">
+                    A cross-platform mobile application developed with Flutter that fetches and displays movie and TV show records from the TMDB API. It features detailed records of movies, trailers, user ratings, reviews, synopses, and a search feature.
+                </p>
+            </div>
+
+            <!-- Screenshots Grid -->
+            <div>
+                <h2 class="text-lg font-bold text-slate-800 border-l-4 border-violet-500 pl-3 mb-6">Application Interface Screenshots</h2>
+                <div class="grid grid-cols-1 gap-8">
+                    <!-- Home -->
+                    <div class="border border-slate-100 rounded-xl p-4 bg-slate-50 flex flex-col items-center shadow-sm">
+                        <span class="text-xs font-bold text-slate-500 mb-3">Home Dashboard</span>
+                        <img src="../../assets/images/flix_sphere/home.jpg" alt="Home page" class="rounded-lg border border-slate-200 w-full max-h-[700px] object-contain cursor-zoom-in bg-white" onclick="openLightbox(this.src)">
+                    </div>
+                    <!-- Detail 1 -->
+                    <div class="border border-slate-100 rounded-xl p-4 bg-slate-50 flex flex-col items-center shadow-sm">
+                        <span class="text-xs font-bold text-slate-500 mb-3">Movie Detail</span>
+                        <img src="../../assets/images/flix_sphere/movie_detail.jpg" alt="Movie detail" class="rounded-lg border border-slate-200 w-full max-h-[700px] object-contain cursor-zoom-in bg-white" onclick="openLightbox(this.src)">
+                    </div>
+                    <!-- Detail 2 -->
+                    <div class="border border-slate-100 rounded-xl p-4 bg-slate-50 flex flex-col items-center shadow-sm">
+                        <span class="text-xs font-bold text-slate-500 mb-3">More Info & Reviews</span>
+                        <img src="../../assets/images/flix_sphere/movie_additional.jpg" alt="Additional movie details" class="rounded-lg border border-slate-200 w-full max-h-[700px] object-contain cursor-zoom-in bg-white" onclick="openLightbox(this.src)">
+                    </div>
+                    <!-- Search -->
+                    <div class="border border-slate-100 rounded-xl p-4 bg-slate-50 flex flex-col items-center shadow-sm">
+                        <span class="text-xs font-bold text-slate-500 mb-3">Search Feature</span>
+                        <img src="../../assets/images/flix_sphere/movie_search.jpg" alt="Movie search page" class="rounded-lg border border-slate-200 w-full max-h-[700px] object-contain cursor-zoom-in bg-white" onclick="openLightbox(this.src)">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox-modal" class="fixed inset-0 z-[100] hidden flex-col items-center justify-center bg-slate-950/90 backdrop-blur-sm transition-all duration-300">
+        <!-- Toolbar -->
+        <div class="absolute top-4 right-4 flex items-center gap-4 z-10 text-white">
+            <button onclick="zoomLightbox(0.2)" class="p-2 hover:bg-white/20 rounded-full transition-colors" aria-label="Zoom In">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+            </button>
+            <button onclick="zoomLightbox(-0.2)" class="p-2 hover:bg-white/20 rounded-full transition-colors" aria-label="Zoom Out">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM13 10H7"/></svg>
+            </button>
+            <button onclick="closeLightbox()" class="p-2 hover:bg-white/20 rounded-full transition-colors" aria-label="Close">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+        </div>
+        <!-- Image Container -->
+        <div id="lightbox-container" class="relative w-full h-full flex items-center justify-center overflow-auto p-4 cursor-grab active:cursor-grabbing">
+            <img id="lightbox-img" src="" alt="Expanded Image" class="max-w-none transition-transform duration-200" style="transform: scale(1); max-height: 90vh; object-fit: contain;">
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="../../src/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Transfer System — Nawapol Singlor</title>
+    <meta name="description" content="File Transfer System project by Nawapol Singlor.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Devicon -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <!-- Tailwind CSS -->
+    <link href="../../src/output.css" rel="stylesheet">
+</head>
+<body class="bg-white text-slate-900 font-sans antialiased overflow-x-hidden selection:bg-cyan-200 selection:text-cyan-900">
+
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-100/90 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="../../index.html#projects" class="text-slate-500 font-bold text-sm tracking-tight hover:text-cyan-700 flex items-center gap-2 transition-colors duration-300">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg> Back to Portfolio
+            </a>
+            <a href="../../index.html" class="text-slate-900 font-bold text-lg tracking-tight hover:text-cyan-700 transition-colors duration-300">
+                &lt;NP /&gt;
+            </a>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-6 pt-28 pb-20">
+        <h1 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4">File Transfer System</h1>
+        <div class="flex flex-wrap gap-2 mb-8">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-slate-100 text-xs text-slate-700 font-medium border border-slate-200"><i class="devicon-java-plain colored text-base"></i> Java</span>
+        </div>
+
+        <div class="space-y-12">
+            <!-- Project Description -->
+            <div>
+                <p class="text-slate-600 leading-relaxed text-lg">
+                    A multi-threaded client-server application written in Java that demonstrates file upload and download mechanisms. It provides a side-by-side comparison between <strong class="text-slate-800">Normal Buffer-based I/O</strong> and <strong class="text-slate-800">Zero-Copy I/O</strong> to maximize throughput and minimize CPU overhead.
+                </p>
+            </div>
+
+            <!-- Features -->
+            <div>
+                <h2 class="text-lg font-bold text-slate-800 border-l-4 border-emerald-500 pl-3 mb-6">Features</h2>
+                <ul class="list-disc list-inside text-slate-600 space-y-3 leading-relaxed">
+                    <li><strong class="text-slate-800">Multi-Threaded Server:</strong> Handles multiple concurrent client connections using standard Java threads.</li>
+                    <li><strong class="text-slate-800">Zero-Copy File Transfer:</strong> Leverages Linux/Unix kernel optimization.</li>
+                    <li><strong class="text-slate-800">Normal Buffer-Based Transfer:</strong> Traditional buffer-based data streaming (4 KB chunks).</li>
+                    <li><strong class="text-slate-800">Interactive CLI UI:</strong> User-friendly command-line interface featuring ANSI color-coded logs, dynamic server file indexing, and execution time tracking (in seconds).</li>
+                    <li><strong class="text-slate-800">Smart Extension Handling:</strong> Automatic detection and management of target file extensions during downloads.</li>
+                </ul>
+            </div>
+
+            <!-- System Architecture -->
+            <div>
+                <h2 class="text-lg font-bold text-slate-800 border-l-4 border-emerald-500 pl-3 mb-6">System Architecture</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="border border-slate-100 rounded-xl p-5 bg-slate-50 shadow-sm">
+                        <h5 class="font-bold text-slate-900 mb-3">1. Normal I/O Mechanism</h5>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-4">Data travels across four context switches and multiple buffer copies between kernel space and user space:</p>
+                        <code class="block bg-slate-800 text-emerald-400 p-3 rounded-lg text-xs md:text-sm font-mono">Disk -> OS Kernel Buffer -> User-space App Buffer -> Socket Buffer -> NIC Buffer</code>
+                    </div>
+                    
+                    <div class="border border-slate-100 rounded-xl p-5 bg-slate-50 shadow-sm">
+                        <h5 class="font-bold text-slate-900 mb-3">2. Zero-Copy I/O Mechanism</h5>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-4">Bypasses the user-space application memory entirely, utilizing direct DMA (Direct Memory Access) transfers:</p>
+                        <code class="block bg-slate-800 text-emerald-400 p-3 rounded-lg text-xs md:text-sm font-mono">Disk -> OS Kernel Buffer -> Socket Buffer / NIC Buffer</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Screenshots -->
+            <div>
+                <h2 class="text-lg font-bold text-slate-800 border-l-4 border-emerald-500 pl-3 mb-6">Application Interface Screenshots</h2>
+                <div class="grid grid-cols-1 gap-8">
+                    <!-- Client Side -->
+                    <div class="border border-slate-100 rounded-xl p-5 bg-slate-50 flex flex-col shadow-sm">
+                        <h5 class="font-bold text-slate-900 mb-2">Client Side Performance Comparison</h5>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-4">The image shows the difference in uploading a 57.62 MB video: Normal I/O takes 0.28 seconds, while Zero-Copy I/O takes 0.12 seconds (measured on the same local network).</p>
+                        <img src="../../assets/images/file_transfer/client_upload.jpg" alt="Client upload benchmark" class="rounded-lg border border-slate-200 w-full max-h-[700px] object-contain cursor-zoom-in bg-[#1e1e1e]" onclick="openLightbox(this.src)">
+                    </div>
+                    
+                    <!-- Server Side -->
+                    <div class="border border-slate-100 rounded-xl p-5 bg-slate-50 flex flex-col shadow-sm">
+                        <h5 class="font-bold text-slate-900 mb-2">Server Side Status</h5>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-4">Displays the connected IP addresses and their respective file transfer statuses.</p>
+                        <img src="../../assets/images/file_transfer/server_upload.jpg" alt="Server status log" class="rounded-lg border border-slate-200 w-full max-h-[700px] object-contain cursor-zoom-in bg-[#1e1e1e]" onclick="openLightbox(this.src)">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox-modal" class="fixed inset-0 z-[100] hidden flex-col items-center justify-center bg-slate-950/90 backdrop-blur-sm transition-all duration-300">
+        <!-- Toolbar -->
+        <div class="absolute top-4 right-4 flex items-center gap-4 z-10 text-white">
+            <button onclick="zoomLightbox(0.2)" class="p-2 hover:bg-white/20 rounded-full transition-colors" aria-label="Zoom In">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+            </button>
+            <button onclick="zoomLightbox(-0.2)" class="p-2 hover:bg-white/20 rounded-full transition-colors" aria-label="Zoom Out">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM13 10H7"/></svg>
+            </button>
+            <button onclick="closeLightbox()" class="p-2 hover:bg-white/20 rounded-full transition-colors" aria-label="Close">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+        </div>
+        <!-- Image Container -->
+        <div id="lightbox-container" class="relative w-full h-full flex items-center justify-center overflow-auto p-4 cursor-grab active:cursor-grabbing">
+            <img id="lightbox-img" src="" alt="Expanded Image" class="max-w-none transition-transform duration-200" style="transform: scale(1); max-height: 90vh; object-fit: contain;">
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="../../src/main.js"></script>
+</body>
+</html>

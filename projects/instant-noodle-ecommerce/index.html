@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instant Noodle E-commerce Platform — Nawapol Singlor</title>
+    <meta name="description" content="Instant Noodle E-commerce Platform project by Nawapol Singlor.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Devicon -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <!-- Tailwind CSS -->
+    <link href="../../src/output.css" rel="stylesheet">
+</head>
+<body class="bg-white text-slate-900 font-sans antialiased overflow-x-hidden selection:bg-cyan-200 selection:text-cyan-900">
+
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-100/90 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="../../index.html#projects" class="text-slate-500 font-bold text-sm tracking-tight hover:text-cyan-700 flex items-center gap-2 transition-colors duration-300">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg> Back to Portfolio
+            </a>
+            <a href="../../index.html" class="text-slate-900 font-bold text-lg tracking-tight hover:text-cyan-700 transition-colors duration-300">
+                &lt;NP /&gt;
+            </a>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-6 pt-28 pb-20">
+        <h1 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4">Instant Noodle E-commerce Platform</h1>
+        <div class="flex flex-wrap gap-2 mb-8">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-slate-100 text-xs text-slate-700 font-medium border border-slate-200"><i class="devicon-php-plain colored text-base"></i> PHP</span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-slate-100 text-xs text-slate-700 font-medium border border-slate-200"><i class="devicon-html5-plain colored text-base"></i> HTML</span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-slate-100 text-xs text-slate-700 font-medium border border-slate-200"><i class="devicon-bootstrap-plain colored text-base"></i> Bootstrap 5</span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-slate-100 text-xs text-slate-700 font-medium border border-slate-200"><i class="devicon-javascript-plain colored text-base"></i> Javascript</span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-slate-100 text-xs text-slate-700 font-medium border border-slate-200"><i class="devicon-mysql-plain colored text-base"></i> MySQL</span>
+        </div>
+
+        <div class="space-y-12">
+            <!-- Project Description -->
+            <div>
+                <p class="text-slate-600 leading-relaxed text-lg">
+                    A comprehensive web-based platform tailored for selling instant noodles. This robust e-commerce application includes both an intuitive storefront for customers to browse and purchase, and a powerful administrative backend for inventory and user management.
+                </p>
+            </div>
+
+            <!-- Customer Side -->
+            <div>
+                <h2 class="text-lg font-bold text-slate-800 border-l-4 border-orange-500 pl-3 mb-6">Customer Side (Storefront)</h2>
+                <div class="grid grid-cols-1 gap-8">
+                    <div class="border border-slate-100 rounded-xl p-4 bg-slate-50 flex flex-col justify-between shadow-sm">
+                        <h5 class="font-bold text-slate-900 mb-4">Homepage</h5>
+                        <img src="../../assets/images/noodles_ecommerce/home.jpg" alt="Homepage" class="rounded-lg border border-slate-200 w-full max-h-[700px] object-contain object-top cursor-zoom-in bg-white" onclick="openLightbox(this.src)">
+                    </div>
+                    
+                    <div class="border border-slate-100 rounded-xl p-4 bg-slate-50 flex flex-col justify-between shadow-sm">
+                        <h5 class="font-bold text-slate-900 mb-4">Menu & Product Browsing</h5>
+                        <img src="../../assets/images/noodles_ecommerce/menu.jpg" alt="Menu" class="rounded-lg border border-slate-200 w-full max-h-[700px] object-contain object-top cursor-zoom-in bg-white" onclick="openLightbox(this.src)">
+                    </div>
+
+                    <div class="border border-slate-100 rounded-xl p-4 bg-slate-50 flex flex-col justify-between shadow-sm">
+                        <h5 class="font-bold text-slate-900 mb-4">Product Detail</h5>
+                        <img src="../../assets/images/noodles_ecommerce/menu_detail.jpg" alt="Menu detail" class="rounded-lg border border-slate-200 w-full max-h-[700px] object-contain object-top cursor-zoom-in bg-white" onclick="openLightbox(this.src)">
+                    </div>
+                    
+                    <div class="border border-slate-100 rounded-xl p-4 bg-slate-50 flex flex-col justify-between shadow-sm">
+                        <h5 class="font-bold text-slate-900 mb-4">Shopping Cart & Checkout</h5>
+                        <img src="../../assets/images/noodles_ecommerce/cart.jpg" alt="Cart" class="rounded-lg border border-slate-200 w-full max-h-[700px] object-contain object-top cursor-zoom-in bg-white" onclick="openLightbox(this.src)">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Admin Panel -->
+            <div>
+                <h2 class="text-lg font-bold text-slate-800 border-l-4 border-orange-500 pl-3 mb-6">Admin Side (Dashboard)</h2>
+                <div class="grid grid-cols-1 gap-8">
+                    <div class="border border-slate-100 rounded-xl p-4 bg-slate-50 shadow-sm flex flex-col justify-between">
+                        <h5 class="font-bold text-slate-900 mb-4">Menu Management</h5>
+                        <img src="../../assets/images/noodles_ecommerce/menu_manage.jpg" alt="Menu manage" class="rounded-lg border border-slate-200 w-full max-h-[700px] object-contain cursor-zoom-in bg-white" onclick="openLightbox(this.src)">
+                    </div>
+                    <div class="border border-slate-100 rounded-xl p-4 bg-slate-50 shadow-sm flex flex-col justify-between">
+                        <h5 class="font-bold text-slate-900 mb-4">Ingredients Management</h5>
+                        <img src="../../assets/images/noodles_ecommerce/ingredients_manage.jpg" alt="Ingredients manage" class="rounded-lg border border-slate-200 w-full max-h-[700px] object-contain cursor-zoom-in bg-white" onclick="openLightbox(this.src)">
+                    </div>
+                    <div class="border border-slate-100 rounded-xl p-4 bg-slate-50 shadow-sm flex flex-col justify-between">
+                        <h5 class="font-bold text-slate-900 mb-4">Order Processing</h5>
+                        <img src="../../assets/images/noodles_ecommerce/admin_order.jpg" alt="Admin order" class="rounded-lg border border-slate-200 w-full max-h-[700px] object-contain cursor-zoom-in bg-white" onclick="openLightbox(this.src)">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox-modal" class="fixed inset-0 z-[100] hidden flex-col items-center justify-center bg-slate-950/90 backdrop-blur-sm transition-all duration-300">
+        <!-- Toolbar -->
+        <div class="absolute top-4 right-4 flex items-center gap-4 z-10 text-white">
+            <button onclick="zoomLightbox(0.2)" class="p-2 hover:bg-white/20 rounded-full transition-colors" aria-label="Zoom In">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+            </button>
+            <button onclick="zoomLightbox(-0.2)" class="p-2 hover:bg-white/20 rounded-full transition-colors" aria-label="Zoom Out">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM13 10H7"/></svg>
+            </button>
+            <button onclick="closeLightbox()" class="p-2 hover:bg-white/20 rounded-full transition-colors" aria-label="Close">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+        </div>
+        <!-- Image Container -->
+        <div id="lightbox-container" class="relative w-full h-full flex items-center justify-center overflow-auto p-4 cursor-grab active:cursor-grabbing">
+            <img id="lightbox-img" src="" alt="Expanded Image" class="max-w-none transition-transform duration-200" style="transform: scale(1); max-height: 90vh; object-fit: contain;">
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="../../src/main.js"></script>
+</body>
+</html>
